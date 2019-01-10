@@ -19,10 +19,29 @@ public class FollowCam : MonoBehaviour {
 
     void FixedUpdate()
     {
+        /*
         if (POI == null) return; //return if there is no poi
 
         //Get the position of the POI
         Vector3 destination = POI.transform.position;
+         */
+
+        Vector3 destination;
+        // If there is no POI, return to P:[0, 0, 0]
+        if (POI == null) {
+            destination = Vector3.zero;
+        } else {
+            destination = POI.transform.position;
+            // if POI is a Projectile and it's sleeping
+            if (POI.tag == "Projectile") {
+                if (POI.GetComponent<Rigidbody>().IsSleeping()) {
+                    // return to default view
+                    POI = null;
+                    // in the next update
+                    return;
+                }
+            }
+        }
 
         // Limit the X & Y to minimum values
         // X - prevent Camera Following to the left side (not game zone)

@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
+    
+    /*
+     * This is a private static instance of Slingshot
+     * that will act like a Singleton, except it will be private,          
+     * so ONLY INSTANCES OF THE SLINGSHOT CLASS CAN ACCESS IT
+     */
+    static private Slingshot S;
 
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
@@ -16,8 +23,16 @@ public class Slingshot : MonoBehaviour {
 
     private Rigidbody projectileRigidbody;
 
+    static public Vector3 LAUNCH_POS {
+        get {
+            if (S == null) return Vector3.zero;
+            return S.launchPos;
+        }
+    }
+
     void Awake()
     {
+        S = this;
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
@@ -43,7 +58,7 @@ public class Slingshot : MonoBehaviour {
         projectile.transform.position = launchPos;
 
         projectileRigidbody = projectile.GetComponent<Rigidbody>();
-        //projectileRigidbody.isKinematic = true;
+        projectileRigidbody.isKinematic = true;
     }
 
     void Update ()
@@ -84,6 +99,8 @@ public class Slingshot : MonoBehaviour {
 
             FollowCam.POI = projectile;
             projectile = null;
+            MissionDemolition.ShotsFired();
+            ProjectileLine.S.poi = projectile;
         }
 
     }
