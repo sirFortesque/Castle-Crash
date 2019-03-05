@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5886119a5c7b34d8872ab527ca3e1b, type: 3}
+  m_Name: UnityBuildSettings
+  m_EditorClassIdentifier: 
+  _basicSettings:
+    baseBuildFolder: bin
+    buildPath: $BUILD/$PLATFORM
+    openFolderPostBuild: 0
+  _productParameters:
+    buildCounter: 1
+    lastGeneratedVersion: 1.0.1481.5705
+    version: 1.0.$DAYSSINCE("January 1, 2015").$SECONDS
+    autoGenerate: 1
+  _releaseTypeList:
+    releaseTypes:
+    - typeName: Release
+      bundleIndentifier: com.Pompany.CrashPalace
+      companyName: Pompany
+      productName: Crash-Palace
+      developmentBuild: 0
+      allowDebugging: 0
+      enableHeadlessMode: 0
+      customDefines: 
+      sceneList:
+        enabledScenes:
+        - fileGUID: b8a28e5a22db5c54caf0a4c490e213ea
+  _platformList:
+    platforms:
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 13
+        name: Android
+        enabled: 1
+      variants:
+      - variantName: Device Type
+        selectedIndex: 0
+        values:
+        - FAT
+        - ARMv7
+        - x86
+      - variantName: Texture Compression
+        selectedIndex: 0
+        values:
+        - ETC
+        - ETC2
+        - ASTC
+        - DXT
+        - PVRTC
+        - ATC
+        - Generic
+      - variantName: Build System
+        selectedIndex: 0
+        values:
+        - Internal
+        - Gradle
+        - ADT (Legacy)
+      platformName: Android
+      binaryNameFormat: '{0}.apk'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 7
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 5
+        name: Windows x86
+        enabled: 1
+      - target: 19
+        name: Windows x64
+        enabled: 0
+      variants: []
+      platformName: PC
+      binaryNameFormat: '{0}.exe'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 1
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 20
+        name: WebGL
+        enabled: 1
+      variants: []
+      platformName: WebGL
+      binaryNameFormat: '{0}'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 13
+  _projectConfigurations:
+    configSet:
+      _Buckets: ffffffffffffffff0000000001000000060000000200000005000000
+      _HashCodes: 72e2416b27f4027645cfcd621b9d631c7b864a10f11a9b2ce7bf3924
+      _Next: ffffffffffffffffffffffffffffffffffffffff0300000004000000
+      _Count: 7
+      _Version: 7
+      _FreeList: -1
+      _FreeCount: 0
+      _Keys:
+      - Release/Android/Android (FAT,ETC,Internal)
+      - Release/Android
+      - Release/PC/Windows x86
+      - Release/PC
+      - Release/WebGL/WebGL
+      - Release/WebGL
+      - Release
+      _Values:
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/Android/Android (FAT,ETC,Internal)
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x86
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/WebGL/WebGL
+      - enabled: 1
+        childKeys:
+        - Release/Android
+        - Release/PC
+        - Release/WebGL
+    showViewOptions: 0
+    showConfigs: 0
+    showBuildInfo: 0
+    hideDisabled: 0
+    treeView: 0
+    selectedKeyChain: 
+  _preBuildActions:
+    buildActions: []
+  _postBuildActions:
+    buildActions: []
